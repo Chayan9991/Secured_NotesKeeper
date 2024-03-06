@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Notes App</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body class="bg-dark vh-100 text-light">
+<div class="container-fluid bg-dark">
+
+    <div class="d-flex justify-content-between">
+        <!-- Brand Name-->
+        <nav class="" th:replace="~{common-components/brand-name}"></nav>
+
+        <!--  Login Registration Button-->
+        <div class="" th:replace="~{common-components/login-reg-button}"></div>
+    </div>
+    <!-- Welcome, Section -->
+    <div class="" th:replace="~{common-components/welcome-msg}"></div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <div class="input-group">
+                            <input type="email" required class="form-control" id="login-email" name="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-group">
+                            </div>
+                            <input name="password" type="password" class="form-control" id="login-password" placeholder="Enter your password">
+                        </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-2 col-md-12">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Register Form -->
+                <form action="/register" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <div class="input-group">
+                            <input required name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <input required name="email" type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input required name="password" type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileImage">Profile Image</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="profileImage" id="profileImage" accept="image/*">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-2 col-md-12">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer th:replace="~{/common-components/footer}"></footer>
+</body>
+</html>

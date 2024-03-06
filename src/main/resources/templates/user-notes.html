@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Example with Bootstrap</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid bg-dark">
+    <div th:replace="~{/common-components/header-navbar}"></div>
+
+<!--    Notes Section-->
+    <div class="">
+        <h1>Home Page</h1>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aliquam!</h5>
+
+    </div>
+</div>
+
+<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

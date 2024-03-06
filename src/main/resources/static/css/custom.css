@@ -1,0 +1,43 @@
+*{
+    font-family: "Comic Sans MS";
+
+}
+
+.profile-btn {
+    background-color: #343a40; /* Dark background color */
+    border: none;
+    padding: 8px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.profile-btn:hover {
+    background-color: #212529; /* Darker background color on hover */
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+}
+
+/* Add custom styles for the modal */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Set the background color with opacity */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Add some border-radius for rounded corners */
+}
+
+.modal-header {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for the header */
+    color: white; /* White text for the header */
+    border-bottom: none; /* Remove border at the bottom of the header */
+}
+
+.modal-body {
+    color: black; /* Black text for the body */
+}
+.change-picture-btn {
+    display: block;
+    margin: 0 auto;
+}

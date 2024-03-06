@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body th:fragment="navbar" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container-fluid">
+
+        <!--    Brand Name-->
+        <nav class="" th:replace="~{common-components/brand-name}"></nav>
+
+        <!-- Search Form -->
+        <form class="form-inline my-2 my-lg-0 mx-auto d-lg-flex col-lg-5">
+            <input class="form-control bg-gradient me-2 bg-secondary border-0" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <!-- User Profile -->
+        <button type="button" class="btn d-flex ms-lg-auto ms-2 profile-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle profile-img" alt="Avatar" />
+        </button>
+
+        <!-- Modal for User Profile -->
+        <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Profile Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" style="width: 80px;" alt="Avatar" />
+                        </div>
+                        <h3 class="mt-3 mb-4 text-center">Chayan Barman</h3>
+                        <p class="text-center mb-4">barmanchayan10@gmail.com</p>
+                        <button type="button" class="btn btn-primary change-picture-btn" data-bs-toggle="modal" data-bs-target="#pictureChangeModal">
+                            Change Profile Picture
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-danger">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Picture Change -->
+        <div class="modal fade" id="pictureChangeModal" tabindex="-1" role="dialog" aria-labelledby="pictureChangeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="pictureChangeModalLabel">Change Profile Picture</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p class="mb-4">Choose a new profile picture</p>
+                        <!-- Form for file upload -->
+                        <form action="your_upload_handler.php" method="post" enctype="multipart/form-data">
+                            <input type="file" class="form-control mb-3" name="file" accept="image/*" required>
+                            <button type="submit" class="btn btn-primary">Upload Picture</button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

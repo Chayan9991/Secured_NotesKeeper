@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Keep-like Card</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="card" style="width: 200px; height: 200px;" data-bs-toggle="modal" data-bs-target="#cardModal">
+        <div class="card-body bg-success bg-gradient">
+            <h5 class="card-title text-white">Card Title</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquid animi architecto culpa cum dolore doloremque ea eius, error eveniet in inventore ipsam iure labore laudantium minus modi molestiae nisi officiis perspiciatis placeat porro provident quasi quibusdam rem reprehenderit saepe sapiente sed similique sunt suscipit ullam veritatis vero voluptate?</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="cardModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success bg-gradient">
+                <h5 class="modal-title" id="cardModalLabel">Edit Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <form>
+                    <div class="form-group">
+                        <label for="editTitle">Title</label>
+                        <input type="text" class="form-control fw-bold " id="editTitle" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">Description</label>
+                        <textarea class="form-control " id="editDescription" rows="3" placeholder=""></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
